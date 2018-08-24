@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> Your News Feed </title>
+    <script type="text/javascript" src = "js/jquery-3.2.1.min.js">
+
+    </script>
     <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
     <link rel = "stylesheet" href = "css/bootstrap.min.css">
-    <link rel = "stylesheet" href = "css/skeleton.css">
+    <!-- <link rel = "stylesheet" href = "css/skeleton.css"> -->
     <link rel = "stylesheet" href = "css/feed.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -30,10 +33,39 @@
                     <li> <a href="#"><img src = "images/explore.png"/></a> </li>
                     <li> <a href="#"><img src = "images/notification.png"/></a> </li>
                     <li> <a href="#"><img src = "images/profile.png"/></a> </li>
-                    <li><a href="#"><img style = "position:relative; top:8px;" src = "images/camera-logo.png" width = "30" height = "25"></a></li>
+                    <li><a href="#"><img class = "upload-button" style = "position:relative; top:8px;" src = "images/camera-logo.png" width = "30" height = "25"></a></li>
                 </ul>
             </div>
         </nav>
+    </div>
+    <div class="upload-image-popup" >
+        <div class="top-uploading">
+            <div class="uploading-left">
+                <img class = "uploading-thumbnail" src="images/default-user.png" width = "50px" height="50px">
+            </div>
+            <div class="uploading-center">
+                <div class="caption">
+                    <input type="text" class = "my-control" placeholder="Enter your caption..." >
+                </div>
+                <div class="location">
+                    <input type="text" class = "my-control" placeholder="Enter your location..." >
+                </div>
+            </div>
+            <div class="uploading-right">
+                <div class="browsing">
+                    <input type="file" style = "display:none;" class = "file_browse">
+                    <input type="submit" value = "Browse" class = "mybtn" value="">
+                </div>
+                <div class="uploading">
+                    <input type="submit" class = "mybtn" value = "Upload">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="loading"> </div>
+            <p class= "during-loading-text"> Your photo is being uploaded.</p>
+            <p class= "after-loading-text"> Your photo has been succesfully uploaded.</p>
+        </div>
     </div>
     <div class="feed-container">
         <div class="photos-container">
@@ -45,18 +77,21 @@
     </div>
     <div class = "stories-outer-container">
         <a href="#">
-        <div class="user-container">
-            <div class="user-profile">
-                <img class = "regular-img" width = "50px" height = "50px" src = "images/default-user.png"/>
+            <div class="user-container">
+                <div class="user-profile">
+                    <img class = "regular-img" width = "50px" height = "50px" src = "images/default-user.png"/>
+                </div>
+                <div class = "user-tag">
+                    <p class = "user-info"><span class = "signed-in-info">  joehab12</span> <span class = "first-last-name"> Youssef Ehab </span></p>
+                </div>
             </div>
-            <div class = "user-tag">
-                <p class = "user-info"><span class = "signed-in-info">  joehab12</span> <span class = "first-last-name"> Youssef Ehab </span></p>
-            </div>
-        </div>
         </a>
         <label class = "stories-label"> Stories</label>
         <p class = "stories-text">No Stories to Show at the moment.</p>
     </div>
 </div>
+<script type="text/javascript" src = "js/feed.js">
+
+</script>
 </body>
 </html>
