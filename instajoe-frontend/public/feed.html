@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "instajoe">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> Your News Feed </title>
-    <script type="text/javascript" src = "js/jquery-3.2.1.min.js">
-
-    </script>
+    <script type="text/javascript" src = "js/jwt-decode.js"></script>
+    <script type="text/javascript" src = "js/angular.min.js"></script>
+    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src = "js/angular-cookies.js"></script>
     <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
     <link rel = "stylesheet" href = "css/bootstrap.min.css">
-    <!-- <link rel = "stylesheet" href = "css/skeleton.css"> -->
+    <link rel = "stylesheet" href = "css/skeleton.css">
     <link rel = "stylesheet" href = "css/feed.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class = "outer-container">
-        <nav class = "navbar navbar-default">
+    <div  class = "outer-container">
+        <nav ng- class = "navbar navbar-default">
             <div class = "left">
                 <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
                 <div class="border">
@@ -45,19 +46,21 @@
             </div>
             <div class="uploading-center">
                 <div class="caption">
-                    <input type="text" class = "my-control" placeholder="Enter your caption..." >
+                    <input type="text" class = "u-full-width" placeholder="Enter your caption..." >
                 </div>
                 <div class="location">
-                    <input type="text" class = "my-control" placeholder="Enter your location..." >
+                    <input type="text" class = "u-full-width" placeholder="Enter your location..." >
                 </div>
             </div>
             <div class="uploading-right">
                 <div class="browsing">
-                    <input type="file" style = "display:none;" class = "file_browse">
-                    <input type="submit" value = "Browse" class = "mybtn" value="">
+                    <form  style = "display:none;" method = "post" enctype="multipart/form-data">
+                        <input type="file" style = "display:none;" name = "file_browse" class = "file_browse">
+                    </form>
+                    <input type="submit" class = "button_style" value = "Browse" >
                 </div>
                 <div class="uploading">
-                    <input type="submit" class = "mybtn" value = "Upload">
+                    <input type="submit" class = "button_style" value = "Upload">
                 </div>
             </div>
         </div>
@@ -75,14 +78,14 @@
         </div> -->
 
     </div>
-    <div class = "stories-outer-container">
+    <div ng-controller = "feedController as $ctrl" class = "stories-outer-container">
         <a href="#">
             <div class="user-container">
                 <div class="user-profile">
-                    <img class = "regular-img" width = "50px" height = "50px" src = "images/default-user.png"/>
+                    <img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/>
                 </div>
                 <div class = "user-tag">
-                    <p class = "user-info"><span class = "signed-in-info">  joehab12</span> <span class = "first-last-name"> Youssef Ehab </span></p>
+                    <p class = "user-info"><span class = "signed-in-info"> {{$ctrl.username}} </span> <span class = "first-last-name"> {{$ctrl.fullName}} </span></p>
                 </div>
             </div>
         </a>
@@ -90,8 +93,8 @@
         <p class = "stories-text">No Stories to Show at the moment.</p>
     </div>
 </div>
-<script type="text/javascript" src = "js/feed.js">
-
-</script>
+<script type="text/javascript" src = "js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src = "js/feed.js"></script>
+<script type="text/javascript" src = "js/core-feed.js"></script>
 </body>
 </html>

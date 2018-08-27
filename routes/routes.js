@@ -1,32 +1,39 @@
-module.exports = function(app){
+//list our modules
+var fs = require('fs');
+var path = require('path');
+var mkdirp = require('mkdirp');
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        var dest = 'instajoe-frontend/public/assets/' + req.params.id;
+        mkdirp.sync(dest);
+        cb(null, dest);
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({ storage: storage }).single('file_browse');
 
-
+var router = function(app){
     //list our controllers
     var loginController = require('../controllers/loginController');
     var registerController = require('../controllers/registerController')
+    var fileController = require('../controllers/fileController');
+
     //list our middlewares
     var loginMiddleware = require('../middlewares/loginMiddleware');
-    //list our routes
 
-    // app.use(function(req,res,next){
-    //     if ('OPTIONS' == req.method) {
-    //         res.header('Access-Control-Allow-Origin', '*');
-    //         res.send(200);
-    //     }
-    //     else {
-    //         res.header('Access-Control-Allow-Origin', '*');
-    //         next();
-    //     }
-    // });
+    //list our routes
     app.post('/login',loginController.login);
     app.post('/register',registerController.register);
     app.use(loginMiddleware.middle);
-    // app.use(function(req, res, next) {
-    //     res.setHeader('Access-Control-Allow-Origin', '*')
-    //     next();
-    // });
+    app.post('/upload/:id',fileController.file);
     app.use(function(req,res){
         res.status(404).json({status:"failed",message: "The requested route is not found."});
     });
-
+}
+module.exports = {
+    upload:upload,
+    router:router
 }

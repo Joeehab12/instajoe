@@ -67,6 +67,9 @@ input{
     right: 0;
     margin: auto;
 }
+.errorMessage{
+    color:white;
+}
 a{
     color: white;
     text-decoration: none;

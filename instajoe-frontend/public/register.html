@@ -34,6 +34,9 @@
                     <input name = "password" ng-minlength = "8" ng-model = "password" class = "u-full-width" type = "password" placeholder= "Password" id = "password">
                     <p ng-show="registerForm.password.$error.minlength" class="help-block">Password must be at least 5 characters long.</p>
                 </div>
+                <div class="error-message">
+                    <p class = "errorMessage">{{$ctrl.error_msg}}</p>
+                </div>
                 <div class = "register">
                     <!-- <div class="four columns offset-by-six"> -->
                     <input ng-disabled = "userForm.$invalid"ng-click = "$ctrl.click(event)" id = "register" class = "button-primary" type = "submit" value = "Signup">

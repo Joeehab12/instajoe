@@ -417,3 +417,17 @@ body{
 .browsing{
     height: 80px;
 }
+
+.uploading-center input{
+    width:80%;
+    margin-bottom:12px;
+}
+
+.browsing input{
+    background: linear-gradient(90deg, #daae51 0%, #d53369 100%);
+    color: #fff;
+}
+.uploading input{
+    background: linear-gradient(90deg, #daae51 0%, #d53369 100%);
+    color: #fff;
+}

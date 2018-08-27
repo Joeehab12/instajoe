@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('superSecret',config.secret);
 
-require('./routes/routes.js')(app);
+require('./routes/routes.js').router(app);
 
 
 app.listen(port,function(){
