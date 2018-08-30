@@ -3,8 +3,6 @@ module.exports.register = function(req,res,next){
     var sequelize = sequelizeInstance.sequelize;
     var Sequelize = sequelizeInstance.Sequelize;
     var user = require('../models/user')(sequelize,Sequelize);
-    var emailCount;
-    var usernameCount;
     var newUser = user.build(
         {
             username: req.body.username,

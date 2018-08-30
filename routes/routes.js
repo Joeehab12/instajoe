@@ -20,7 +20,8 @@ var router = function(app){
     var loginController = require('../controllers/loginController');
     var registerController = require('../controllers/registerController')
     var fileController = require('../controllers/fileController');
-
+    var photoController = require('../controllers/photoController');
+    var fetchController = require('../controllers/fetchController');
     //list our middlewares
     var loginMiddleware = require('../middlewares/loginMiddleware');
 
@@ -29,6 +30,8 @@ var router = function(app){
     app.post('/register',registerController.register);
     app.use(loginMiddleware.middle);
     app.post('/upload/:id',fileController.file);
+    app.post('/photo/:id',photoController.photo);
+    app.get('/photos/:id',fetchController.fetch);
     app.use(function(req,res){
         res.status(404).json({status:"failed",message: "The requested route is not found."});
     });

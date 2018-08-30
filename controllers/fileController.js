@@ -8,6 +8,7 @@ module.exports.file = function(req,res,next){
     }
     else{
         // Everything went fine
+        
         res.json({status:"success", message: "File uploaded successfully."});
     }
   })

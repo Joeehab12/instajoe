@@ -1,5 +1,5 @@
 module.exports = function(sequelize,type){
-    return sequelize.define('users',{
+    return sequelize.define('user',{
         user_id: { type: type.INTEGER,
             primaryKey:true,
             autoIncrement:true
@@ -10,6 +10,7 @@ module.exports = function(sequelize,type){
         password: type.STRING,
         profilePic: type.STRING
     },{
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true
 });
 }

@@ -39,17 +39,17 @@
             </div>
         </nav>
     </div>
-    <div class="upload-image-popup" >
+    <div ng-controller = "photoController as $ctrl" class="upload-image-popup" >
         <div class="top-uploading">
             <div class="uploading-left">
                 <img class = "uploading-thumbnail" src="images/default-user.png" width = "50px" height="50px">
             </div>
             <div class="uploading-center">
                 <div class="caption">
-                    <input type="text" class = "u-full-width" placeholder="Enter your caption..." >
+                    <input type="text" ng-model = "caption" class = "caption-ctrl u-full-width" placeholder="Enter your caption..." >
                 </div>
                 <div class="location">
-                    <input type="text" class = "u-full-width" placeholder="Enter your location..." >
+                    <input type="text" ng-model = "location" class = "location-ctrl u-full-width" placeholder="Enter your location..." >
                 </div>
             </div>
             <div class="uploading-right">
@@ -60,14 +60,14 @@
                     <input type="submit" class = "button_style" value = "Browse" >
                 </div>
                 <div class="uploading">
-                    <input type="submit" class = "button_style" value = "Upload">
+                    <input ng-click = "$ctrl.click($event)" type="submit" class = "button_style" value = "Upload">
                 </div>
             </div>
         </div>
         <div class="main">
             <div class="loading"> </div>
             <p class= "during-loading-text"> Your photo is being uploaded.</p>
-            <p class= "after-loading-text"> Your photo has been succesfully uploaded.</p>
+            <p class= "after-loading-text"> {{$ctrl.message}}</p>
         </div>
     </div>
     <div class="feed-container">
@@ -96,5 +96,6 @@
 <script type="text/javascript" src = "js/jquery.cookie.min.js"></script>
 <script type="text/javascript" src = "js/feed.js"></script>
 <script type="text/javascript" src = "js/core-feed.js"></script>
+<script type="text/javascript" src = "js/photo_save.js"></script>
 </body>
 </html>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "instajoe">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> Your News Feed </title>
+    <script type="text/javascript" src = "js/jwt-decode.js"></script>
+    <script type="text/javascript" src = "js/angular.min.js"></script>
+    <script type="text/javascript" src = "js/angular-cookies.js"></script>
     <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
     <link rel = "stylesheet" href = "css/bootstrap.min.css">
     <!-- <link rel = "stylesheet" href = "css/skeleton.css"> -->
@@ -133,41 +136,33 @@
     </div>
 </div>
 
-<div class="gallery">
-    <div class="photos-row">
-        <div class="first">
-            <a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
-        </div>
-        <div class="second">
-            <a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
-        </div>
-        <div class="third">
-            <a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
-        </div>
-    </div>
-    <div class="photos-row">
-        <div class="first">
-            <a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
-        </div>
-        <div class="second">
-            <a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
-        </div>
-        <div class="third">
-            <a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
-        </div>
-    </div>
+<div ng-controller = "profileController as $ctrl" class="gallery">
+    <!-- <div class="photos-row">
+    <div class="first">
+    <a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
+</div>
+<div class="second">
+<a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
+</div>
+<div class="third">
+<a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
 </div>
 </div>
-<script type="text/javascript">
-$('.photos-row img').on('click', function () {
-    // $('.dim, .image-popup').fadeIn(500);
-    $('.dim,.image-popup').fadeIn(500);
-});
-$('body').keyup(function(event){
-    if (event.which == 27){
-        $('.dim,.image-popup').fadeOut(500);
-    }
-});
-</script>
+<div class="photos-row">
+<div class="first">
+<a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
+</div>
+<div class="second">
+<a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
+</div>
+<div class="third">
+<a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
+</div>
+</div> -->
+</div>
+</div>
+<script type="text/javascript" src = "js/profile.js"></script>
+<script type="text/javascript" src = "js/core-profile.js"></script>
+
 </body>
 </html>
