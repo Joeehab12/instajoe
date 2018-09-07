@@ -5,22 +5,23 @@ var app = express();
 // var config = require('./config');
 var port = 8008;
 
-app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(__dirname + '/public/app'));
+// app.set('strict routing',true);
 // app.set('views', __dirname + '/public');
 // app.set('view engine','pug');
 
 app.get('/',function(req,res){
-    res.sendFile(__dirname + '/public/login.html');
+    res.sendFile(__dirname + '/public/app/login.html');
 });
 app.get('/register',function(req,res){
-    res.sendFile(__dirname + '/public/register.html');
+    // res.setHeader('Location','/register')
+    res.sendFile(__dirname + '/public/app/register.html');
 });
 app.get('/feed',function(req,res){
-    res.sendFile(__dirname + '/public/feed.html');
+    res.sendFile(__dirname + '/public/app/feed.html');
 });
-app.get('/:username',function(req,res){
-    res.sendFile(__dirname + '/public/profile.html');
+app.get('/profile',function(req,res){
+    res.sendFile(__dirname + '/public/app/profile.html');
 });
 
 

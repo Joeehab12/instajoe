@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> Your News Feed </title>
+    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"> </script>
     <script type="text/javascript" src = "js/jwt-decode.js"></script>
     <script type="text/javascript" src = "js/angular.min.js"></script>
     <script type="text/javascript" src = "js/angular-cookies.js"></script>
@@ -14,7 +15,6 @@
     <link rel="stylesheet" href="css/profile.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"> </script>
 </head>
 <body>
     <div class = "outer-container">
@@ -40,7 +40,7 @@
             </div>
         </nav>
     </div>
-    <div class="profile-container">
+    <div ng-controller = "profileController as $ctrl" class="profile-container">
         <div class="profile-floater">
             <div class="profile-image">
                 <a href="#"><img src="images/default-user.png" width = "152" height = "152"></a>
@@ -76,13 +76,13 @@
             <!-- <div class="photo-header">
             <span class = "photo-info"><b> nellykarimofficial </b></span>
         </div> -->
-
     </div>
 
     <!-- <div class="dim">
 
 </div> -->
 <div class="image-popup">
+
     <div class="image">
         <img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "600px" height="600px">
     </div>
@@ -136,33 +136,14 @@
     </div>
 </div>
 
-<div ng-controller = "profileController as $ctrl" class="gallery">
-    <!-- <div class="photos-row">
-    <div class="first">
-    <a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
-</div>
-<div class="second">
-<a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
-</div>
-<div class="third">
-<a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
+<div ng-controller = "photoController as $ctrl" class="gallery">
 </div>
 </div>
-<div class="photos-row">
-<div class="first">
-<a href="#"><img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "293" height="293" ></a>
-</div>
-<div class="second">
-<a href="#"><img src="images/31947019_10215959181077474_9192854846812717056_o.jpg" width = "293" height="293" ></a>
-</div>
-<div class="third">
-<a href="#"><img src="images/31947080_10215959140716465_5839082590954323968_o.jpg" width = "293" height="293" ></a>
-</div>
-</div> -->
-</div>
-</div>
+<script type = "text/javascript" src = "app.js"></script>
+<script type = "text/javascript" src = "controllers/profileController.js"></script>
+<!-- <script type = "module" src = "js/core-profile.js"></script> -->
 <script type="text/javascript" src = "js/profile.js"></script>
-<script type="text/javascript" src = "js/core-profile.js"></script>
-
+<script type = "text/javascript" src = "controllers/photoController.js"></script>
+<!-- <script type = "module" src = "js/core-photos.js"></script> -->
 </body>
 </html>

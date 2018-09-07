@@ -1,4 +1,4 @@
-function photoController($scope,$http,$cookies){
+function saveController($scope,$http,$cookies){
     var token = $cookies.get('token');
     var decoded = jwt_decode(token);
     var self = this;
@@ -14,4 +14,4 @@ function photoController($scope,$http,$cookies){
     }
 }
 
-angular.module('instajoe').controller('photoController',['$scope','$http','$cookies',photoController]);
+angular.module('instajoe').controller('saveController',['$scope','$http','$cookies',saveController]);

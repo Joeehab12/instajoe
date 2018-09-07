@@ -9,11 +9,11 @@ module.exports.register = function(req,res,next){
             password: req.body.password,
             fullName: req.body.fullName,
             email: req.body.email,
-            profilePic: "localhost"
+            profilePic: "http://localhost:8008/assets/default-user.png"
         }
     );
     user.findAndCountAll({where: {username: req.body.username , $or: [{email: req.body.email}]} }).then(function(result){
-        if (result.count =0){
+        if (result.count == 0){
             newUser.save().then(function(){
                 res.status(200).json({status: "success", message: "user registered successfully."});
             })

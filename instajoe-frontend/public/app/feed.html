@@ -39,7 +39,7 @@
             </div>
         </nav>
     </div>
-    <div ng-controller = "photoController as $ctrl" class="upload-image-popup" >
+    <div ng-controller = "saveController as $ctrl" class="upload-image-popup" >
         <div class="top-uploading">
             <div class="uploading-left">
                 <img class = "uploading-thumbnail" src="images/default-user.png" width = "50px" height="50px">
@@ -82,7 +82,7 @@
         <a href="#">
             <div class="user-container">
                 <div class="user-profile">
-                    <img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/>
+                    <a href="http://localhost:8008/profile"><img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/></a> 
                 </div>
                 <div class = "user-tag">
                     <p class = "user-info"><span class = "signed-in-info"> {{$ctrl.username}} </span> <span class = "first-last-name"> {{$ctrl.fullName}} </span></p>

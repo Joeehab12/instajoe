@@ -14,8 +14,8 @@
 .profile-image img{
     border-radius:100px;
 }
-img{
-    /* object-fit: contain; */
+.gallery img{
+    object-fit: cover;
 }
 .username{
     float:left;

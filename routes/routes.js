@@ -5,7 +5,7 @@ var mkdirp = require('mkdirp');
 var multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        var dest = 'instajoe-frontend/public/assets/' + req.params.id;
+        var dest = 'instajoe-frontend/public/app/views/assets/' + req.params.id;
         mkdirp.sync(dest);
         cb(null, dest);
     },
