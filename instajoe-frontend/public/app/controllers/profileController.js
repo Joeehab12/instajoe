@@ -16,12 +16,12 @@ function profileController($scope,$http,$cookies,$rootScope){
             1: "second",
             2: "third"
         }
-        angular.element(document.querySelector('.gallery')).append('<div class = "photos-row">');
+        angular.element(document.querySelector('.gallery')).append('<div class = "row photos-row">');
         photos.forEach(function(photo){
-            angular.element(document.querySelector('.photos-row:last-child')).append('<div class = "' + photo_map[photo_count%3] +'">'
-            + '<a href="javascript:void(0)"><img class = "photo-thumbnail" src = "' + photo.photo_url + '" width = "293" height = "293"></a></div>');
+            angular.element(document.querySelector('.photos-row:last-child')).append('<div class = "container cont col-md-4">'
+            + '<a href="javascript:void(0)"><img class = "img img-responsive photo-thumbnail" src = "' + photo.photo_url + '" width = "293" height = "293"></a></div>');
             if (photo_count % 3 == 2){
-                angular.element(document.querySelector('.gallery')).append('<div class = "photos-row">');
+                angular.element(document.querySelector('.gallery')).append('<div class = "row photos-row">');
             }
             photo_count++;
         });

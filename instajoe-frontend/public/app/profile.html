@@ -3,74 +3,83 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title> Your News Feed </title>
+    <title> Your Profile </title>
     <script type="text/javascript" src = "js/jquery-3.2.1.min.js"> </script>
     <script type="text/javascript" src = "js/jwt-decode.js"></script>
     <script type="text/javascript" src = "js/angular.min.js"></script>
     <script type="text/javascript" src = "js/angular-cookies.js"></script>
     <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
     <link rel = "stylesheet" href = "css/bootstrap.min.css">
-    <!-- <link rel = "stylesheet" href = "css/skeleton.css"> -->
+    <link rel = "stylesheet" href = "css/skeleton.css">
     <link rel = "stylesheet" href = "css/feed.css">
+    <link rel = "stylesheet" href = "css/responsive-feed.css">
     <link rel="stylesheet" href="css/profile.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class = "outer-container">
-        <nav class = "navbar navbar-default">
-            <div class = "left">
-                <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
-                <div class="border">
+    <div  class = "container-fluid outer-container">
+        <nav ng- class = "navbar navbar-default">
+            <div class = "row">
+                <div class="item col-md-4">
+                    <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
+                    <div class="border">
 
+                    </div>
+                    <a class = "logo" href="#"> Instajoe </a>
                 </div>
-                <a class = "logo" href="#"> Instajoe </a>
-            </div>
-            <div class = "middle">
-                <i id = "search-icon" class = "material-icons"> search </i>
-                <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
-            </div>
-            <div class = "right">
-                <ul class = "nav navbar-nav">
-                    <li> <a href="#"><img src = "images/explore.png"/></a> </li>
-                    <li> <a href="#"><img src = "images/notification.png"/></a> </li>
-                    <li> <a href="#"><img src = "images/profile.png"/></a> </li>
-                    <li><a href="#"><img style = "position:relative; top:8px;" src = "images/camera-logo.png" width = "30" height = "25"></a></li>
-                </ul>
+                <div class="item col-md-4">
+                    <!-- <i id = "search-icon" class = "material-icons"> search </i> -->
+                    <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
+                </div>
+                <div class="item col-md-4">
+                    <!-- <ul class = "nav navbar-nav"> -->
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/explore.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/notification.png"/></a>
+                        <a href="#"><img src = "images/profile.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img class = "upload-button" src = "images/camera-logo.png" width = "30" height = "25"></a>
+                        <!-- <li></li> -->
+                    <!-- </ul> -->
+                </div>
             </div>
         </nav>
     </div>
     <div ng-controller = "profileController as $ctrl" class="profile-container">
-        <div class="profile-floater">
-            <div class="profile-image">
+        <div class="row profile-image text-center">
+            <div class="col-md-4">
                 <a href="#"><img src="images/default-user.png" width = "152" height = "152"></a>
             </div>
-            <div class="profile-info">
-                <div class="top">
-                    <div class="username">
+            <div class="col-md-8">
+                <div class="row text-center">
+                    <div class="col-md-3 username">
                         joehab12
                     </div>
-                    <div class="edit-profile">
+                    <div class="col-md-2 edit-profile">
                         <input value = "Edit Profile" type = "submit" class = "mybtn">
                     </div>
-                    <div class="settings">
+                    <div class="col-md-2 settings">
                         <a href="#"><img src="images/cog-solid.svg" width = "20" height = "20"></a>
                     </div>
                 </div>
-                <div class="profile-middle">
-                    <div class="posts-count">
+                <div class="profile-middle row text-center">
+                    <div class="col-md-2">
                         <span><b>152</b> Posts</span>
                     </div>
-                    <div class="followers-count">
+                    <div class="col-md-3">
                         <span><b>221,154</b> Followers</span>
                     </div>
-                    <div class="following-count">
+                    <div class="col-md-2">
                         <span><b>200</b> Following</span>
                     </div>
                 </div>
-                <div class="bottom">
-                    <p class = "full-name"><b>Youssef Ehab</b></p>
-                    <p class = "description">Hard working student. Ambitious,friendly,reliable and a very old gamer :-)</p>
+                <div style = "padding:20px;" class="row">
+                    <div class="col-md-8">
+                        <p class = "full-name"><b>Youssef Ehab</b></p>
+                        <p class = "description">Hard working student. Ambitious,friendly,reliable and a very old gamer :-)</p>
+                    </div>
                 </div>
             </div>
             <!-- <div class="photo-header">

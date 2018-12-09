@@ -12,30 +12,37 @@
     <link rel = "stylesheet" href = "css/bootstrap.min.css">
     <link rel = "stylesheet" href = "css/skeleton.css">
     <link rel = "stylesheet" href = "css/feed.css">
+    <link rel = "stylesheet" href = "css/responsive-feed.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div  class = "outer-container">
+    <div  class = "container-fluid outer-container">
         <nav ng- class = "navbar navbar-default">
-            <div class = "left">
-                <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
-                <div class="border">
+            <div class = "row">
+                <div class="item col-md-4">
+                    <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
+                    <div class="border">
 
+                    </div>
+                    <a class = "logo" href="#"> Instajoe </a>
                 </div>
-                <a class = "logo" href="#"> Instajoe </a>
-            </div>
-            <div class = "middle">
-                <i id = "search-icon" class = "material-icons"> search </i>
-                <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
-            </div>
-            <div class = "right">
-                <ul class = "nav navbar-nav">
-                    <li> <a href="#"><img src = "images/explore.png"/></a> </li>
-                    <li> <a href="#"><img src = "images/notification.png"/></a> </li>
-                    <li> <a href="#"><img src = "images/profile.png"/></a> </li>
-                    <li><a href="#"><img class = "upload-button" style = "position:relative; top:8px;" src = "images/camera-logo.png" width = "30" height = "25"></a></li>
-                </ul>
+                <div class="item col-md-4">
+                    <!-- <i id = "search-icon" class = "material-icons"> search </i> -->
+                    <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
+                </div>
+                <div class="item col-md-4">
+                    <!-- <ul class = "nav navbar-nav"> -->
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/explore.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/notification.png"/></a>
+                        <a href="#"><img src = "images/profile.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img class = "upload-button" src = "images/camera-logo.png" width = "30" height = "25"></a>
+                        <!-- <li></li> -->
+                    <!-- </ul> -->
+                </div>
             </div>
         </nav>
     </div>
@@ -71,27 +78,38 @@
         </div>
     </div>
     <div class="feed-container">
-        <div class="photos-container">
-            <p>You have no photos yet.</p>
+        <!-- <div class="photos-container"> -->
+        <div class="row text-center">
+            <div class="col-md-6">
+                <p>You have no photos yet.</p>
+            </div>
+            <div class="col-md-6 ">
+                <div ng-controller = "feedController as $ctrl">
+                    <a href="#">
+                        <div class="row text-center">
+                            <div class="col-md-1 col-md-offset-5">
+                                <a href="http://localhost:8008/profile"><img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/></a>
+                            </div>
+
+                            <div class = "col-md-2">
+                                <p class = "user-info"><span class = "signed-in-info"> {{$ctrl.username}} </span> <span class = "first-last-name"> {{$ctrl.fullName}} </span></p>
+                            </div>
+                        </div>
+
+                    </a>
+                    <div class="row text-center">
+                        <div class="col-md-6 col-md-offset-4">
+                            <label class = "stories-label"> Stories</label>
+                            <p class = "stories-text">No Stories to Show at the moment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
             <!-- <div class="photo-header">
             <span class = "photo-info"><b> nellykarimofficial </b></span>
         </div> -->
 
-    </div>
-    <div ng-controller = "feedController as $ctrl" class = "stories-outer-container">
-        <a href="#">
-            <div class="user-container">
-                <div class="user-profile">
-                    <a href="http://localhost:8008/profile"><img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/></a> 
-                </div>
-                <div class = "user-tag">
-                    <p class = "user-info"><span class = "signed-in-info"> {{$ctrl.username}} </span> <span class = "first-last-name"> {{$ctrl.fullName}} </span></p>
-                </div>
-            </div>
-        </a>
-        <label class = "stories-label"> Stories</label>
-        <p class = "stories-text">No Stories to Show at the moment.</p>
-    </div>
 </div>
 <script type="text/javascript" src = "js/jquery.cookie.min.js"></script>
 <script type="text/javascript" src = "js/feed.js"></script>

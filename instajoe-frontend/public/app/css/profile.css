@@ -1,6 +1,6 @@
 .profile-image{
     padding: 50px;
-    float:left;
+    /* float:left; */
 }
 .profile-info{
     padding: 50px;
@@ -17,8 +17,12 @@
 .gallery img{
     object-fit: cover;
 }
+.img-fluid{
+    max-width:100%;
+    height: auto;
+}
 .username{
-    float:left;
+    /* float:left; */
     font-family: Helvetica;
     font-weight: 200;
     font-size: 32px;
@@ -43,18 +47,18 @@
     padding:5px;
 }
 .edit-profile{
-    float:left;
+    /* float:left; */
     font-family: Helvetica;
     font-weight: 600;
     font-size: 14px;
     line-height: 40px;
     height: 50px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 .settings{
     line-height: 40px;
-    margin-left: 20px;
-    float:left;
+    /* margin-left: 20px; */
+    /* float:left; */
     height: 50px;
 }
 .top{
@@ -67,25 +71,25 @@
     font-size: 16px;
 }
 .profile-middle{
-    height: 50px;
+    /* height: 50px; */
     font-size: 16px;
 }
 .posts-count{
     /*margin-left:50px;*/
-    float:left;
+    /* float:left; */
 }
 .followers-count{
-    margin-left:50px;
-    float:left;
+    /* margin-left:50px; */
+    /* float:left; */
 }
 .following-count{
-    margin-left:50px;
-    float:left;
+    /* margin-left:50px; */
+    /* float:left; */
 }
 
 .profile-floater{
-    width:65%;
-    margin: auto;
+    /* width:65%; */
+    /* margin: auto; */
 }
 .gallery{
     width:65%;

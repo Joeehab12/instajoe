@@ -37,6 +37,9 @@ ul{
     width:250px;
     /*padding: 15px 10px;*/
 }
+.item{
+    padding:20px;
+}
 input{
 
     margin:0;
@@ -165,7 +168,8 @@ li{
 .user-info{
     font-family: Helvetica;
     font-weight: 600;
-    margin-left:70px;
+    margin-top:10px;
+    /* margin-left:70px; */
 }
 .user-duration{
     position: relative;
@@ -201,6 +205,7 @@ li{
 
 .signed-in-info{
         font-family: Helvetica;
+        margin-bottom: 10px;
         /*margin-left: 20px;*/
 }
 .first-last-name{
@@ -212,6 +217,7 @@ li{
     font-weight: 400;
     color:#999999;
     display: block;
+    margin-top:15px;
 }
 .feed-container{
     height:100vh;

@@ -15,6 +15,8 @@ body{
     background-image: url("../images/tumblr_oiwytwMDKF1tf8vylo1_1280.png");
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
 }
 input{
     font-family: Raleway;
@@ -68,4 +70,9 @@ a{
 }
 .message{
     color: white;
+}
+@media (max-width:745px){
+    body{
+        background-size:auto;
+    }
 }

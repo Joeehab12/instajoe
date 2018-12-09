@@ -20,7 +20,7 @@ module.exports.login = function(req,res,next){
                 var token = jwt.sign(payload, app.app.get('superSecret'), {
                     expiresIn: 1440 // expires in 24 hours
                 });
-                res.status(200).json({status: "success",token: token,message: "Enjoy your token."});
+                res.status(200).json({status: "success",token: token,message: "Enjoy your token.",user: user});
             }
             else{
                 res.status(200).json({status: "Failed",message: "Incorrect Password."});
